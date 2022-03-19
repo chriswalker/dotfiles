@@ -1,0 +1,21 @@
+[user]
+	email = thatamazingweb@gmail.com
+	name = Chris Walker
+[core]
+	editor = kak
+	attributesfile = $HOME/.config/git/.gitattributes
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[color "status"]
+	header = white bold
+	added = green
+	changed = yellow
+	untracked = blue
+	branch = blue bold
+[color "diff"]
+	hunk = cyan bold
+	func = blue bold
+[init]
+	defaultBranch = main
+[alias]
+	lg = log --oneline --decorate --graph

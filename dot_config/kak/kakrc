@@ -1,0 +1,29 @@
+evaluate-commands %sh{
+    # Check if plug.kak installed, and install it if not
+    plugins="$kak_config/plugins"
+    mkdir -p "$plugins"
+    [ ! -e "$plugins/plug.kak" ] && \
+        git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+
+    # Source config files
+    files="
+        config.kak
+        plugins.kak
+        filetypes.kak
+        mappings.kak
+        modeline.kak
+    "
+
+    for file in $files; do
+        printf "%s\n" "try %{
+           source '$HOME/.config/kak/$file'
+        } catch %{
+            try %{
+                echo -debug \"%val{error}\" 
+            } catch {
+                echo -debug 'Error sourcing $file'
+            }
+        }"
+    done
+}

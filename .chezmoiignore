@@ -1,0 +1,7 @@
+README.md
+.config/kak/plugins/
+
+{{- if ne .os "linux-fedora" }}
+.config/fish/functions/in_podman.fish
+.config/fish/functions/toolbox_name.fish
+{{- end }}

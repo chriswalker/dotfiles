@@ -1,0 +1,13 @@
+{{- $work := (and (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "peaches")) -}}
+
+{{- $os := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-     $os = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
+[data]
+work = {{ $work }}
+os = {{ $os | quote }}
+
+[edit]
+command = "kak"

@@ -1,0 +1,43 @@
+#
+# aliases.fish - common aliases
+#
+# @author Chris Walker
+#
+
+# General
+alias grep "grep --color=auto"
+
+# Top display in CPU decending order
+alias top "top -o cpu"
+
+# Nicer tree output - default to ignoring vendor/ and .git/ folders
+alias tree "tree -aC -I \"vendor|.git\""
+
+# Bat instead of plain cat
+alias cat "bat"
+
+# exa instead of plain ls
+alias ls "exa --git --git-ignore --group-directories-first"
+#... but occasionally want regular ls
+alias lls "ls -GFh --color=auto"
+
+{{- if eq .os "darwin"}}
+alias o "open"
+alias ql "qlmanage -p"
+{{else if eq .os "linux-fedora"}}
+# Containers
+# Dive source always Podman on my Linux devices
+alias dive "dive --source podman $1"
+
+alias tb "toolbox"
+alias tbe "toolbox enter $1"
+alias tbl "toolbox list"
+{{end}}
+
+{{- if eq .work true }}
+# Work-related
+alias k "kubectl"
+alias kl "kubectl logs -f"
+alias kdp "kubectl describe pod $1"
+alias kgp "kubectl get pods"
+{{- end}}

@@ -12,7 +12,7 @@ set -x GOBIN $GOPATH/bin
 set PATH $GOBIN $PATH
 {{- end}}
 {{- if eq .work true}}
-set PATH /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/x86_64/ $PATH
-set PATH ~/Dev/Applications/google-cloud-sdk/bin/ $PATH
-set PATH /usr/local/iot/node@16/bin/ $PATH
+set PATH /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/x86_64 $PATH
+set PATH ~/Dev/Applications/google-cloud-sdk/bin $PATH
+set PATH /usr/local/opt/node@16/bin $PATH
 {{- end}}

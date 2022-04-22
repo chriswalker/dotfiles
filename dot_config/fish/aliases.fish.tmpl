@@ -19,7 +19,7 @@ alias cat "bat"
 # exa instead of plain ls
 alias ls "exa --git --git-ignore --group-directories-first"
 #... but occasionally want regular ls
-alias lls "ls -GFh --color=auto"
+alias lls "/bin/ls -GFh --color=auto"
 
 {{- if eq .os "darwin"}}
 alias o "open"

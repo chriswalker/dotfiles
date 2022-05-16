@@ -11,6 +11,9 @@ set -x GOPATH ~/Dev/Go
 set -x GOBIN $GOPATH/bin
 set PATH $GOBIN $PATH
 {{- end}}
+{{- if (and (eq .os "darwin") (eq .chezmoi.arch "arm64")) }}
+eval (/opt/homebrew/bin/brew shellenv)
+{{- end}}
 {{- if eq .work true}}
 set PATH /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/x86_64 $PATH
 set PATH ~/Dev/Applications/google-cloud-sdk/bin $PATH

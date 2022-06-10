@@ -85,7 +85,7 @@ evaluate-commands %sh{
 
         face global Prompt ${snow_storm_dark},${polar_night_dark}+b
 
-        face global MatchingChar ${frost_light},${polar_night_darkest}+b
+        face global MatchingChar ${polar_night_darkest},${frost_light}+b
 
         face global BufferPadding ${polar_night_lightest},${polar_night_darkest}
 

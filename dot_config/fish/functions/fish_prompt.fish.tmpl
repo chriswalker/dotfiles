@@ -23,13 +23,7 @@ function fish_prompt \
 {{- end }}
 
     # PWD
-    printf '%s%s' $cyan (prompt_pwd) 
-
-    # Git
-    set -l is_git_repository (command git rev-parse --is-inside-work-tree 2>/dev/null)
-    if test -n "$is_git_repository"
-      printf ' %s%s' $grey (git_prompt) 
-    end
+    printf '%s%s%s%s' $cyan (prompt_pwd) $grey (fish_git_prompt) 
 
     # Second line
     printf '\n> ' 

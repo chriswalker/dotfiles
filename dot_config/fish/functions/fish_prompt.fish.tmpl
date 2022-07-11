@@ -10,7 +10,7 @@ function fish_prompt \
     set -l cyan (set_color --bold cyan)
     set -l yellow (set_color --bold yellow) 
     set -l magenta (set_color --bold magenta)
-    set -l bold_green (set_color --bold green)
+    set -l green (set_color --bold green)
     set -l grey (set_color 81a1c1)
     set -l orange (set_color d08770 --bold)
 
@@ -21,6 +21,11 @@ function fish_prompt \
         printf '%s[%s] ' $magenta (toolbox_name)
     end
 {{- end }}
+
+{{- if eq .work true }}
+    # Kube info
+    printf '%s[%s] ' $green (kube_prompt)
+{{- end}}
 
     # PWD
     printf '%s%s%s%s' $cyan (prompt_pwd) $grey (fish_git_prompt) 

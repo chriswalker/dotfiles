@@ -1,6 +1,8 @@
 function fish_prompt \
   --description 'Write out the prompt'
 
+    set -l cmd_status $status
+
     # No limit to pwd output
     set -g fish_prompt_pwd_dir_length 0
 
@@ -13,6 +15,7 @@ function fish_prompt \
     set -l green (set_color --bold green)
     set -l grey (set_color 81a1c1)
     set -l orange (set_color d08770 --bold)
+	set -l red (set_color --bold red)
 
 {{- if eq .os "linux-fedora" }}
     if string match -q "true" (in_podman)
@@ -28,8 +31,12 @@ function fish_prompt \
 {{- end}}
 
     # PWD
-    printf '%s%s%s%s' $cyan (prompt_pwd) $grey (fish_git_prompt) 
+	if test $cmd_status -eq 0
+	    printf '%s%s%s%s' $cyan (prompt_pwd) $green (fish_git_prompt) 
+	else
+		printf '%s%s%s' $red (prompt_pwd) (fish_git_prompt)
+	end
 
     # Second line
-    printf '\n> ' 
+    printf '%s\n> ' $cyan
 end

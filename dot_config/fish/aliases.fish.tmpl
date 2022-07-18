@@ -10,9 +10,6 @@ alias grep "grep --color=auto"
 # Top display in CPU decending order
 alias top "top -o cpu"
 
-# Nicer tree output - default to ignoring vendor/ and .git/ folders
-alias tree "tree -aC -I \"vendor|.git\""
-
 # Bat instead of plain cat
 alias cat "bat"
 #... but occasionally want regular cat
@@ -20,8 +17,12 @@ alias ccat "/bin/cat"
 
 # exa instead of plain ls
 alias ls "exa"
+# Use exa for 'tree'
+alias tree "exa -T -I \"vendor|.git\""
 #... but occasionally want regular ls
 alias lls "/bin/ls -GFh --color=auto"
+
+
 
 {{- if eq .os "darwin"}}
 alias o "open"

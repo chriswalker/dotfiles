@@ -27,7 +27,11 @@ function fish_prompt \
 
 {{- if eq .work true }}
     # Kube info
-    printf '%s[%s] ' $green (kube_prompt)
+    if test $cmd_status -eq 0 
+        printf '%s[%s] ' $green (kube_prompt)
+    else
+        printf '%s[%s] ' $red (kube_prompt)
+	end
 {{- end}}
 
     # PWD

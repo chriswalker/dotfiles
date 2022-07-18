@@ -36,7 +36,7 @@ function fish_prompt \
 
     # PWD
 	if test $cmd_status -eq 0
-	    printf '%s%s%s%s' $cyan (prompt_pwd) $green (fish_git_prompt) 
+	    printf '%s%s%s' $green (prompt_pwd) (fish_git_prompt) 
 	else
 		printf '%s%s%s' $red (prompt_pwd) (fish_git_prompt)
 	end

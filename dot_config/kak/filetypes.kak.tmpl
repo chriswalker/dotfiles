@@ -4,7 +4,6 @@
 
 # Config for Go filetypes
 hook global WinSetOption filetype=go %{
-    set window formatcmd 'goimports'
     # Use golangci-lint for linting
     set window lintcmd 'golangci-lint run'
 
@@ -14,8 +13,10 @@ hook global WinSetOption filetype=go %{
 
     # Run goimports for formatting
     hook buffer BufWritePre .* %{
-        # go-format -use=goimports
-        format-buffer
+        try %{
+            lsp-code-action-sync '^Organize Imports$'
+        }
+        lsp-formatting-sync
         lint
     }
 
@@ -53,3 +54,23 @@ hook global BufCreate .*\.mdx %{
 }
 {{end -}}
 
+{{if (and (eq .os "darwin") (eq .chezmoi.arch "arm64")) }}
+hook global WinSetOption filetype=zig %{
+    set window formatcmd 'zig fmt --stdin'
+
+    # LSP-related config
+    lsp-enable-window
+    set window lsp_auto_highlight_references true
+    set-option global lsp_server_configuration zls.zig_lib_path="/opt/homebrew/Cellar/zig/0.9.1/lib/zig"
+    set-option -add global lsp_server_configuration zls.warn_style=true
+
+    # Run goimports for formatting
+    hook buffer BufWritePre .* %{
+        format-buffer
+        # lint
+    }
+
+    # Override References face
+    set-face global Reference yellow+b
+}
+{{end -}}

@@ -5,6 +5,7 @@
 # Config for Go filetypes
 hook global WinSetOption filetype=go %{
     # Use golangci-lint for linting
+    set window formatcmd 'goimports'
     set window lintcmd 'golangci-lint run'
 
     # LSP-related config
@@ -13,10 +14,7 @@ hook global WinSetOption filetype=go %{
 
     # Run goimports for formatting
     hook buffer BufWritePre .* %{
-        try %{
-            lsp-code-action-sync '^Organize Imports$'
-        }
-        lsp-formatting-sync
+		format-buffer
         lint
     }
 

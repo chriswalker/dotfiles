@@ -18,3 +18,8 @@ filetypes = ["sh"]
 roots = [".git", ".hg"]
 command = "bash-language-server"
 args = ["start"]
+
+[language.zig]
+filetypes = ["zig"]
+roots = ["build.zig"]
+command = "zls"

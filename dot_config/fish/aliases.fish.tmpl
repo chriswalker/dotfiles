@@ -22,11 +22,10 @@ alias tree "exa -T -I \"vendor|.git\""
 #... but occasionally want regular ls
 alias lls "/bin/ls -GFh --color=auto"
 
-
-
 {{- if eq .os "darwin"}}
 alias o "open"
 alias ql "qlmanage -p"
+alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 {{else if eq .os "linux-fedora"}}
 # Containers
 # Dive source always Podman on my Linux devices

@@ -42,6 +42,14 @@ define-command fz -params 1 -shell-script-candidates %{
     edit %arg{1}
 }
 
+hook global ModeChange insert:normal %{ 
+    echo "mode changed"
+	git update-diff
+}
+
+hook global WinCreate .* %{ git show-diff }
+hook global BufWritePost .* %{ git update-diff }
+
 {{if eq .os "linux-fedora"}}
 # Toolbox-awareness
 # -----------------------------------------------------------------------------

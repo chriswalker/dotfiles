@@ -19,3 +19,6 @@
 	defaultBranch = main
 [alias]
 	lg = log --oneline --decorate --graph
+	co = checkout
+    br = branch
+    st = status

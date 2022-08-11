@@ -43,7 +43,6 @@ define-command fz -params 1 -shell-script-candidates %{
 }
 
 hook global ModeChange insert:normal %{ 
-    echo "mode changed"
 	git update-diff
 }
 

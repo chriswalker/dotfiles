@@ -39,6 +39,39 @@ table.insert(mymappings, {key="_", mods="ALT|SHIFT", action="DecreaseFontSize"})
 -- Toggle zoom state of current pane (maximise)
 table.insert(mymappings, {key="m", mods="ALT", action="TogglePaneZoomState"}) 
     
+-- Going to tweak the inbuild "Nord" theme to provide tab bar colouring
+-- ----------------------------------------------------------------------------
+local selected_scheme = "nord"
+
+local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
+scheme.tab_bar = {
+    background = "#3B4252",
+    active_tab = {
+        fg_color = "#A3BE8C",
+        bg_color = "#2E3440",
+        intensity = "Bold",
+    },
+    inactive_tab = {
+        fg_color = "#D8DEE9",
+        bg_color = "#3B4252",
+    },
+    inactive_tab_hover = {
+        fg_color = "#ECEFF4",
+        bg_color = "#3B4252",
+        intensity = "Bold",
+    },
+    new_tab = {
+        fg_color = "#EBCB8B",
+        bg_color = "#3B4252",
+        intensity = "Bold",
+    },
+    new_tab_hover = {
+        bg_color = "#EBCB8B",
+        fg_color = "#3B4252",
+        intensity = "Bold",
+    }
+}
+
 return {
     --
     -- Appearance
@@ -46,39 +79,9 @@ return {
 
 	-- Colour scheme
     -- ------------------------------------------------------------------------ 
-    color_scheme = "nord",
-
-    colors = {
-        -- Hm, doesn't seem to work
-        split = "#D8DEE9",
-        tab_bar = {
-            background = "#3B4252",
-            active_tab = {
-                fg_color = "#A3BE8C",
-                bg_color = "#2E3440",
-                intensity = "Bold",
-            },
-            inactive_tab = {
-                fg_color = "#D8DEE9",
-                bg_color = "#3B4252",
-            },
-            inactive_tab_hover = {
-                fg_color = "#ECEFF4",
-                bg_color = "#3B4252",
-                intensity = "Bold",
-            },
-            new_tab = {
-                fg_color = "#EBCB8B",
-                bg_color = "#3B4252",
-                intensity = "Bold",
-            },
-            new_tab_hover = {
-                bg_color = "#EBCB8B",
-                fg_color = "#3B4252",
-                intensity = "Bold",
-            },
-        },
-    },
+    -- Set modified Nord theme back into colour schemes
+    color_schemes = { [selected_scheme] = scheme },
+    color_scheme = selected_scheme,
 
     inactive_pane_hsb = {
         brightness = 0.6,
@@ -116,15 +119,4 @@ return {
     -- We are on Wayland
     enable_wayland = true,
     {{end}}
-    -- No window title or borders
-    -- window_decorations = "NONE",
-    -- wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-    --     if tab.is_active then
-    --         return {
-    --             -- {Background={Color="blue"}},
-    --             {Text="--" .. tab.active_pane.title .. "--"},
-    --         }
-    --     end
-    --     return tab.active_pane.title
-    -- end)
 }

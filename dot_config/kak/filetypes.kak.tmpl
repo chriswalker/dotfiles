@@ -53,23 +53,3 @@ hook global BufCreate .*\.mdx %{
 }
 {{end -}}
 
-{{if (and (eq .os "darwin") (eq .chezmoi.arch "arm64")) }}
-hook global WinSetOption filetype=zig %{
-    set window formatcmd 'zig fmt --stdin'
-
-    # LSP-related config
-    lsp-enable-window
-    set window lsp_auto_highlight_references true
-    set-option global lsp_server_configuration zls.zig_lib_path="/opt/homebrew/Cellar/zig/0.9.1/lib/zig"
-    set-option -add global lsp_server_configuration zls.warn_style=true
-
-    # Run goimports for formatting
-    hook buffer BufWritePre .* %{
-        format-buffer
-        # lint
-    }
-
-    # Override References face
-    set-face global Reference yellow+b
-}
-{{end -}}

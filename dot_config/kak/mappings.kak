@@ -1,5 +1,6 @@
 # -----------------------------------------------------------------------------
-# Keyboard mappings - general + golang-specific.
+# Keyboard mappings - general
+# See plugins.kak for plugin-specific mappings
 # -----------------------------------------------------------------------------
 
 # General mappings
@@ -44,23 +45,3 @@ map global normal X ':extend-line-up %val{count}<ret>'
 
 # Invoke fuzzy-finder
 map -docstring "Fuzzy-find files" global user f ':fz '
-
-# kak-lsp mappings
-# -----------------------------------------------------------------------------
- 
-# Show implementations
-map -docstring "LSP - Show implementations" global user i :lsp-implementation<ret>
-# Show references
-map -docstring "LSP - Show references" global user r :lsp-references<ret>
-# Switch to LSP user mode
-map -docstring "LSP - Enter LSP user mode" global user l :enter-user-mode<space>lsp<ret>
-
-# Go-specific mappings (Go functionality under construction)
-# -----------------------------------------------------------------------------
-
-# require-module golang
-map -docstring "Go - Switch to alternate file" global user a :go-alternate<ret>
-map -docstring "Go - Run tests in current package" global user t :go-test<ret>
-map -docstring "Go - Display godoc for symbol under cursor" global user d :go-doc-info<ret>
-map -docstring "Go - Display coverage for current file" global user c :go-coverage<ret>
-map -docstring "Go - Add JSON tags to struct" global user j :go-add-tags<space>json<ret>

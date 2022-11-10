@@ -46,6 +46,10 @@ hook global GlobalSetOption toolbox_name=(go|tinygo) %{
         map -docstring "LSP - Show references" global user r :lsp-references<ret>
         # Switch to LSP user mode
         map -docstring "LSP - Enter LSP user mode" global user l :enter-user-mode<space>lsp<ret>
+        # Prev function - 9 = (
+        map -docstring "LSP - Previous function" global normal 9 :lsp-previous-function<ret>
+        # Next function - 0 = )
+        map -docstring "LSP - Next function" global normal 0 :lsp-next-function<ret>
     }
 
     # golang.kak - additional Go-related functionality

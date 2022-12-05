@@ -90,11 +90,14 @@ return {
     
     -- Font config
     -- ------------------------------------------------------------------------ 
+    font = wezterm.font 'Go Mono',
     {{if eq .os "darwin" -}}
     font_size = 15,
     {{ else if eq .os "linux-fedora" -}}
     font_size = 11,
-    {{end}}
+    {{end -}}
+    line_height = 1.1,
+
     -- Tab bar configuration
     -- ------------------------------------------------------------------------ 
     tab_bar_at_bottom = true,

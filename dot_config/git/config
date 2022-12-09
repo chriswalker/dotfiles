@@ -18,7 +18,7 @@
 [init]
 	defaultBranch = main
 [alias]
-	lg = log --oneline --decorate --graph
+	lg = log --oneline --decorate --graph -n 15
 	co = checkout
     br = branch
     st = status

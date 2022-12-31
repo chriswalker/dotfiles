@@ -36,7 +36,7 @@ evaluate-commands %sh{
         face global operator ${frost_light}
         # face global attribute ${aurora_orange}
         face global attribute ${snow_storm_dark}+b
-        face global comment ${polar_night_comment}+i
+        face global comment ${polar_night_comment}
         face global meta ${frost_dark}
         face global builtin default+b #?
     "

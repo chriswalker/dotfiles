@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 
 # UI changes: get rid of clippy, don't change terminal title
-set global ui_options terminal_assistant=off terminl_set_title=false
+set global ui_options terminal_assistant=off terminal_set_title=false
 
 # Set tab widths to 4 spaces
 set-option global tabstop 4
@@ -49,7 +49,7 @@ hook global ModeChange insert:normal %{
 hook global WinCreate .* %{ git show-diff }
 hook global BufWritePost .* %{ git update-diff }
 
-{{if eq .os "linux-fedora"}}
+{{- if eq .os "linux-fedora"}}
 # Toolbox-awareness
 # -----------------------------------------------------------------------------
 

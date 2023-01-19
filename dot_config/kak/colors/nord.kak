@@ -66,8 +66,8 @@ evaluate-commands %sh{
         face global PrimaryCursorEol ${polar_night_darkest},${aurora_orange}+fg
         face global SecondaryCursorEol ${polar_night_darkest},${aurora_yellow}+fg
 
-        face global LineNumbers ${polar_night_lightest},${polar_night_darkest}
-        face global LineNumberCursor ${snow_storm_dark},${polar_night_darkest}
+        face global LineNumbers ${polar_night_comment},${polar_night_darkest}
+        face global LineNumberCursor ${snow_storm_dark},${polar_night_darkest}+b
 
         face global MenuForeground ${snow_storm_light},${polar_night_lightest}+b
         face global MenuBackground ${snow_storm_dark},${polar_night_dark}
@@ -78,10 +78,10 @@ evaluate-commands %sh{
         face global Error ${aurora_red},${polar_night_dark}
 
         face global StatusLine ${snow_storm_dark},${polar_night_dark}+b
-        face global StatusLineMode ${polar_night_darkest},${aurora_green}
-        face global StatusLineInfo ${frost_light}
-        face global StatusLineValue ${aurora_green}
-        face global StatusCursor ${polar_night_darkest},${snow_storm_dark}
+        face global StatusLineMode ${polar_night_darkest},${aurora_green}+b
+        face global StatusLineInfo ${frost_light}+b
+        face global StatusLineValue ${aurora_green}+b
+        face global StatusCursor ${polar_night_darkest},${snow_storm_dark}+b
 
         face global Prompt ${snow_storm_dark},${polar_night_dark}+b
 

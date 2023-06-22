@@ -38,6 +38,14 @@ hook global WinSetOption filetype=sh %{
     }
 }
 
+# JSON
+hook global WinSetOption filetype=json %{
+    set window formatcmd 'jsonfmt'
+
+    # No formatting on save; don't always want
+    # to do this.
+}
+
 {{if eq .work false}}
 # WebAssembly Text files (just highlight as Lisp)
 hook global BufCreate .*\.wat %{

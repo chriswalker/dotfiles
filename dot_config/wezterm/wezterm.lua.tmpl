@@ -90,8 +90,9 @@ return {
     
     -- Font config
     -- ------------------------------------------------------------------------ 
+    font = wezterm.font 'Berkeley Mono',
     {{if eq .os "darwin" -}}
-    font_size = 15,
+    font_size = 16,
     {{ else if eq .os "linux-fedora" -}}
     font_size = 11,
     {{- end}}

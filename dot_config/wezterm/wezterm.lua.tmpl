@@ -44,31 +44,20 @@ table.insert(mymappings, {key="m", mods="ALT", action="TogglePaneZoomState"})
 local selected_scheme = "nord"
 
 local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
-scheme.split = "#3B4252"
+scheme.split = "#4f5769"
 scheme.tab_bar = {
-    background = "#3B4252",
+    background = "#4f5769",
     active_tab = {
-        fg_color = "#A3BE8C",
-        bg_color = "#2E3440",
-        intensity = "Bold",
+        fg_color = "whitesmoke",
+        bg_color = "black",
     },
     inactive_tab = {
-        fg_color = "#D8DEE9",
-        bg_color = "#3B4252",
-    },
-    inactive_tab_hover = {
-        fg_color = "#ECEFF4",
-        bg_color = "#3B4252",
-        intensity = "Bold",
+        fg_color = "whitesmoke",
+        bg_color = "#4f5769",
     },
     new_tab = {
-        fg_color = "#EBCB8B",
-        bg_color = "#3B4252",
-        intensity = "Bold",
-    },
-    new_tab_hover = {
-        bg_color = "#EBCB8B",
-        fg_color = "#3B4252",
+        fg_color = "gold",
+        bg_color = "#4f5769",
         intensity = "Bold",
     }
 }

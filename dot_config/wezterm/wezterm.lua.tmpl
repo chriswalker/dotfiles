@@ -41,24 +41,40 @@ table.insert(mymappings, {key="m", mods="ALT", action="TogglePaneZoomState"})
     
 -- Going to tweak the inbuild "Nord" theme to provide tab bar colouring
 -- ----------------------------------------------------------------------------
-local selected_scheme = "Ayu Mirage (Gogh)"
+local selected_scheme = "Ayu Mirage"
 
 local scheme = wezterm.get_builtin_color_schemes()[selected_scheme]
+-- Modify the scheme a little - background colours are typically different
+-- to ANSI 0, which leads to some unintended colours here and there across
+-- various tools
+scheme.ansi[1] = scheme.background
+
 scheme.split = "#4f5769"
 scheme.tab_bar = {
     background = "#4f5769",
     active_tab = {
         fg_color = "whitesmoke",
         bg_color = "black",
+        intensity = "Bold"
     },
     inactive_tab = {
         fg_color = "whitesmoke",
+        bg_color = "#4f5769"
+    },
+    inactive_tab_hover = {
+        fg_color = "whitesmoke",
         bg_color = "#4f5769",
+        intensity = "Bold"
     },
     new_tab = {
         fg_color = "gold",
         bg_color = "#4f5769",
-        intensity = "Bold",
+        intensity = "Bold"
+    },
+    new_tab_hover = {
+        fg_color = "black",
+        bg_color = "gold",
+        intensity = "Bold"
     }
 }
 

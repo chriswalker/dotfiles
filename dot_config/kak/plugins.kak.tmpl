@@ -23,8 +23,8 @@ hook global GlobalSetOption toolbox_name=(go|tinygo) %{
         # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
         # TODO debug
 
-        set global lsp_diagnostic_line_error_sign '▶'
-        set global lsp_diagnostic_line_warning_sign '▶'
+        # set global lsp_diagnostic_line_error_sign '▶'
+        # set global lsp_diagnostic_line_warning_sign '▶'
 
         # TODO - Switch off logging to debug buffer
 
@@ -47,17 +47,14 @@ hook global GlobalSetOption toolbox_name=(go|tinygo) %{
         # Switch to LSP user mode
         map -docstring "LSP - Enter LSP user mode" global user l :enter-user-mode<space>lsp<ret>
         # Prev function - 9 = (
-        map -docstring "LSP - Previous function" global normal 9 :lsp-previous-function<ret>
+        map -docstring "LSP - Previous function" global normal ( :lsp-previous-function<ret>
         # Next function - 0 = )
-        map -docstring "LSP - Next function" global normal 0 :lsp-next-function<ret>
+        map -docstring "LSP - Next function" global normal ) :lsp-next-function<ret>
     }
 
     # golang.kak - additional Go-related functionality
     # -----------------------------------------------------------------------------
     plug "chriswalker/golang.kak" ensure %{
-        # Override some highlighters
-        set-face global Uninstrumented 'rgb:616e88'
-
         map -docstring "Go - Switch to alternate file" global user a :go-alternate<ret>
         map -docstring "Go - Run tests in current package" global user t :go-test<ret>
         map -docstring "Go - Display godoc for symbol under cursor" global user d :go-doc-info<ret>

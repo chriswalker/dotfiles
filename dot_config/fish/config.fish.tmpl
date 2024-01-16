@@ -25,7 +25,7 @@ set -x EXA_COLORS "uu=37:un=37:gu=33:gn=37:da=37:sn=36:sb=36:ur=37:gr=35:tr=35:u
 
 # Source other config files
 # -----------------------------------------------------------------------------
-set files paths.fish fzf.fish ui.fish aliases.fish
+set files paths.fish fzf.fish ansi_term.fish aliases.fish
 for file in $files; source $XDG_CONFIG_HOME/fish/$file; end
 
 {{if eq .os "linux-fedora" -}}

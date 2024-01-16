@@ -7,16 +7,22 @@
 # Use ripgrep in searches
 set -x FZF_DEFAULT_COMMAND 'rg --hidden -l ""'
 
-# Set Nord theming
+# Set ANSI theming - defaults to colours terminal is set to.
 set -x FZF_DEFAULT_OPTS '
-    --color fg:#D8DEE9,bg:#2E3440,hl:#88C0D0,fg+:#D8DEE9,bg+:#3B4252,hl+:#BF616A
-    --color pointer:#BF616A,info:#88C0D0,spinner:#88C0D0,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B
-    --color gutter:#2E3440
-    --color border:#3B4252
+    --color=16,pointer:blue,fg+:blue,hl+:yellow,hl:yellow,prompt:green
+    --color info:yellow,border:bright-black
+    --no-scrollbar
+    --no-separator
 '
 
+# bat command for use in  previews
+set -l bat_cmd 'bat --style=snip --theme=ansi --color=always'
+
 # Set preview command
-set -x FZF_PREVIEW_COMMAND "bat --style=changes --theme='Nord' --color=always"
+set -x FZF_PREVIEW_COMMAND "$bat_cmd"
 
 # Show tree of selection in directory matching
-set -x FZF_ALT_C_OPTS "--preview 'tree | head -200'"
+set -x FZF_ALT_C_OPTS "--preview 'tree {}'"
+
+# Ctrl-T options
+set -x FZF_CTRL_T_OPTS "--preview '$bat_cmd {}'"

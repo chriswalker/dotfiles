@@ -7,14 +7,16 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [color "status"]
-	header = white bold
+	header = black
 	added = green
-	changed = yellow
+	changed = red
 	untracked = blue
-	branch = blue bold
+	branch = blue
 [color "diff"]
-	hunk = cyan bold
-	func = blue bold
+	hunk = magenta
+	func = blue
+	frag = blue
+	meta = black
 [init]
 	defaultBranch = main
 [alias]

@@ -1,0 +1,66 @@
+# A Plan 9-esque theme; colours adapted from the Vim 'vacme' theme
+# found at:
+#
+#     https://github.com/overvale/vacme
+
+[colors]
+# black/red/green/yellow/blue/magenta/cyan/white
+ansi = [
+    'black',
+    '#C0363D',
+    '#57864E',
+    '#B7B19C',
+    '#2A8DC5',
+    '#8888C7',
+    '#B0ECED',
+    '#EEEEA7'
+]
+brights = [
+    'black',
+    '#F2ACAA',
+    '#98CE8F',
+    '#EAEBDB',
+    '#A6DCF8',
+    '#D0D0F7',
+    '#CCFFFE',
+    '#FFFFEC'
+]
+foreground = 'black'
+background = '#FFFFEC'   # brights[8]
+split = '#2A8DC5'        # ansi[5]
+cursor_fg = 'black'
+cursor_bg = '#EEEEA7'    # ansi[8]
+selection_fg = 'black'
+selection_bg = '#EEEEA7' # ansi[8]
+
+[colors.tab_bar]
+background = '#2A8DC5'   # ansi[5]
+
+[colors.tab_bar.active_tab]
+fg_color = 'black'
+bg_color = '#FFFFEC'     # brights[8]
+
+[colors.tab_bar.inactive_tab]
+fg_color = '#FFFFEC'     # brights[8]
+bg_color = '#2A8DC5'     # ansi[5]
+intensity = "Bold"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = '#2A8DC5'     # ansi[5]
+bg_color = '#FFFFEC'     # brights[8]
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = '#FFFFEC'     # brights[8]
+bg_color = '#2A8DC5'     # ansi[5]
+intensity = "Bold"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = '#2A8DC5'     # ansi[5]
+bg_color = '#FFFFEC'     # brights[8]
+intensity = "Bold"
+
+[metadata]
+name = "Plan 9"
+aliases = [ "Plan 9", "plan9" ]
+author = "Chris Walker"

@@ -1,5 +1,5 @@
 snippet_support = false
-verbosity = 2
+verbosity = 0
 
 [server]
 # exit session if no requests were received during given period in seconds
@@ -13,13 +13,3 @@ roots = ["Gopkg.toml", "go.mod", ".git", ".hg"]
 command = "gopls"
 offset_encoding = "utf-8"
 
-[language.bash]
-filetypes = ["sh"]
-roots = [".git", ".hg"]
-command = "bash-language-server"
-args = ["start"]
-
-[language.zig]
-filetypes = ["zig"]
-roots = ["build.zig"]
-command = "zls"

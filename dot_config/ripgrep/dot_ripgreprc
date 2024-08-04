@@ -1,8 +1,10 @@
 --max-columns=175
 --follow
 --smart-case
---colors=path:fg:blue
+--colors=path:fg:black
 --colors=path:style:bold
---colors=line:fg:white
---colors=match:fg:yellow
+--colors=line:fg:black
+--colors=line:style:bold
+--colors=match:fg:black
+--colors=match:bg:white
 --colors=match:style:bold

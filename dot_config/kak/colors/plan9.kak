@@ -52,7 +52,7 @@ evaluate-commands %sh{
         face global module ${black}
         face global function ${black}
         face global string ${black}
-        face global keyword ${black}+b
+        face global keyword ${black}
         face global operator ${black}
         face global attribute ${black}
         face global comment ${black}

@@ -20,14 +20,12 @@ hook global WinSetOption filetype=go %{
     }
 
     # Override some plugin colours
-    set-face global Reference yellow+b
-    set-face global Covered green+b
-    set-face global NotCovered red+b
+    set-face global Uninstrumented black
 }
 
 # Shell scripts
 hook global WinSetOption filetype=sh %{
-    # Use golangci-lint for linting
+    # Use shellcheck for linting
     set window lintcmd 'shellcheck -fgcc -Cnever'
     set window formatcmd 'shfmt -ci -i 2'
 
@@ -46,20 +44,7 @@ hook global WinSetOption filetype=json %{
     # to do this.
 }
 
-{{if eq .work false}}
 # WebAssembly Text files (just highlight as Lisp)
 hook global BufCreate .*\.wat %{
    set buffer filetype lisp 
 }
-{{else}}
-# Set bats (Bash unit-test) files to `sh` filetype
-hook global BufCreate .*\.bats %{
-    set buffer filetype sh
-}
-
-# Set mdx files to markdown filetype
-hook global BufCreate .*\.mdx %{
-	set buffer filetype markdown
-}
-{{end -}}
-

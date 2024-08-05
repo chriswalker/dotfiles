@@ -13,7 +13,6 @@ evaluate-commands %sh{
         filetypes.kak
         mappings.kak
         modeline.kak
-        wezterm.kak
     "
 
     for file in $files; do

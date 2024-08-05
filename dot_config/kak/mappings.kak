@@ -47,4 +47,4 @@ map global normal X ':extend-line-up %val{count}<ret>'
 map -docstring "Fuzzy-find files" global user f ':fz '
 
 # Open a new pane with the same Kakoune session
-map -docstring "Wezterm - Split right" global normal <c-l> ':wezterm-split right "kak -c %val{session}"<ret>'
+map -docstring "Wezterm - Split right" global normal <c-l> ':wezterm-terminal-horizontal kak -c %val{session}<ret>'

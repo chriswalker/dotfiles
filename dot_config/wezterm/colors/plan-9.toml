@@ -29,7 +29,7 @@ foreground = 'black'
 background = '#FFFFEC'   # brights[8]
 split = '#2A8DC5'        # ansi[5]
 cursor_fg = 'black'
-cursor_bg = '#EEEEA7'    # ansi[8]
+cursor_bg = '#B0ECED'    # ansi[7]
 selection_fg = 'black'
 selection_bg = '#EEEEA7' # ansi[8]
 

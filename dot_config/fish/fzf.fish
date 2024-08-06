@@ -9,8 +9,10 @@ set -x FZF_DEFAULT_COMMAND 'rg --hidden -l ""'
 
 # Set ANSI theming - defaults to colours terminal is set to.
 set -x FZF_DEFAULT_OPTS '
-    --color=16,pointer:blue,fg+:blue,hl+:yellow,hl:yellow,prompt:green
-    --color info:yellow,border:bright-black
+    --color=16,prompt:black,info:green,fg+:black:bold,bg+:bright-white
+    --color=hl+:red,hl:black:reverse,hl+:black:reverse
+    --color=pointer:black:bold,info:blue:reverse
+    --pointer=">"
     --no-scrollbar
     --no-separator
 '

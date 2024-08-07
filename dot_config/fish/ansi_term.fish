@@ -8,14 +8,14 @@
 set fish_color_error red --underline
 set fish_color_comment black
 set fish_color_quote green
-set fish_color_match bryellow
+set fish_color_match white
 set fish_color_command black
 set fish_color_param blue
 set fish_color_autosuggestion blue
-set fish_color_redirection magenta
-set fish_color_end white
-set fish_color_operator magenta
-set fish_color_escape magenta
+set fish_color_redirection black
+set fish_color_end black
+set fish_color_operator black
+set fish_color_escape black
 
 set fish_pager_color_description blue
 set fish_pager_color_prefix black --bold

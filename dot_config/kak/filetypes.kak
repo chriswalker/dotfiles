@@ -23,6 +23,13 @@ hook global WinSetOption filetype=go %{
     set-face global Uninstrumented black
 }
 
+# Go module files
+hook global BufCreate .*go\.(mod|sum) %{
+    set-face global Dependency black
+    set-face global Hash green
+    set-face global Version blue
+}
+
 # Shell scripts
 hook global WinSetOption filetype=sh %{
     # Use shellcheck for linting

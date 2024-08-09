@@ -15,31 +15,14 @@ function fish_prompt \
     set -l green (set_color green)
     set -l grey (set_color 81a1c1)
     set -l orange (set_color d08770 --bold)
-	set -l red (set_color red)
-
-{{- if eq .os "linux-fedora" }}
-    if string match -q "true" (in_podman)
-        # set -l toolbox_name (grep name /run/.containerenv | cut -d '"' -f2)
-        # printf '%s[%s] ' $magenta $toolbox_name
-        printf '%s[%s] ' $magenta (toolbox_name)
-    end
-{{- end }}
-
-{{- if eq .work true }}
-    # Kube info
-    if test $cmd_status -eq 0 
-        printf '%s[%s] ' $green (kube_prompt)
-    else
-        printf '%s[%s] ' $red (kube_prompt)
-	end
-{{- end}}
+    set -l red (set_color red)
 
     # PWD
-	if test $cmd_status -eq 0
-	    printf '%s%s%s' $normal (prompt_pwd) (fish_git_prompt) 
-	else
-		printf '%s%s%s' $red (prompt_pwd) (fish_git_prompt)
-	end
+    if test $cmd_status -eq 0
+        printf '%s%s%s' $normal (prompt_pwd) (fish_git_prompt) 
+    else
+        printf '%s%s%s' $red (prompt_pwd) (fish_git_prompt)
+    end
 
     # Second line
     printf '%s\n> ' $normal

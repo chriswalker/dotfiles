@@ -13,14 +13,10 @@ set PATH $GOBIN $PATH
 # Add wezterm to path for scripting in Kakoune etc
 set -x PATH /Applications/WezTerm.app/Contents/MacOS $PATH
 {{- end}}
+
 {{- if (and (eq .os "darwin") (eq .chezmoi.arch "arm64")) }}
 # Ensure Homebrew's installation of SQLite gets picked up
 # over the system-installed one
 set -x PATH /opt/homebrew/opt/sqlite/bin $PATH
 eval (/opt/homebrew/bin/brew shellenv)
-{{- end}}
-{{- if eq .work true}}
-set PATH /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/x86_64 $PATH
-set PATH ~/Dev/Applications/google-cloud-sdk/bin $PATH
-set PATH /usr/local/opt/node@16/bin $PATH
 {{- end}}

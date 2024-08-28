@@ -84,20 +84,20 @@ evaluate-commands %sh{
         face global SecondaryCursorEol ${magenta3}
         face global LineNumbers ${black},${white1}
         face global LineNumberCursor ${black},${white3}
-        face global MenuForeground ${black},${cyan2}+b
-        face global MenuBackground ${black},${cyan1}
-        face global MenuInfo ${black},${cyan1}
-        face global Information ${black},${cyan1}
+        face global MenuForeground ${black},${blue2}+b
+        face global MenuBackground ${black},${blue1}
+        face global MenuInfo ${black},${blue1}
+        face global Information ${black},${blue1}
         face global Error ${red3}+b
         face global DiagnosticError ${red3}+b
         face global DiagnosticWarning ${red3}+b
-        face global StatusLine ${black},${cyan1}+b
-        face global StatusLineMode ${black},${cyan1}+b
-        face global StatusLineInfo ${black},${cyan1}+b
+        face global StatusLine ${black},${blue1}
+        face global StatusLineMode ${black},${blue1}+b
+        face global StatusLineInfo ${black},${blue1}+b
         face global StatusLineValue ${red1}
         face global StatusCursor ${black}+r
         face global Prompt ${black}
-        face global MatchingChar ${black},${white2}
+        face global MatchingChar ${black},${white3}
         face global BufferPadding ${black}
     "
 

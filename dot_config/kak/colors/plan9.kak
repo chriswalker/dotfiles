@@ -55,7 +55,7 @@ evaluate-commands %sh{
         face global keyword ${black}
         face global operator ${black}
         face global attribute ${black}
-        face global comment ${black}
+        face global comment ${blue3}
         face global meta ${black}
         face global builtin ${black}
     "

@@ -28,7 +28,7 @@ hook global InsertCompletionHide .* %{
 # See:
 # https://github.com/mawww/kakoune/wiki/Selections#how-to-make-x-select-lines-downward-and-x-select-lines-upward
 define-command -params 1 extend-line-down %{
-    exec "<a-:>%arg{1}X"
+    exec "<a-:>%arg{1}x"
 }
 define-command -params 1 extend-line-up %{
     exec "<a-:><a-;>%arg{1}K<a-;>"

@@ -6,6 +6,9 @@ evaluate-commands %sh{
         git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
     printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
 
+    # kak-lsp
+    kak-lsp
+
     # Source config files
     files="
         config.kak

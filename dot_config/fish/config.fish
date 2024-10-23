@@ -19,6 +19,8 @@ set -x BAT_CONFIG_PATH $XDG_CONFIG_HOME/bat/bat.conf
 # Data directory for docker volume mounts etc
 set -g DATA_HOME ~/Dev/data
 
+# ANSI colours for `jq` output
+set -x JQ_COLORS "0;90:0;30:0;30:0;30:0;30:0;30:0;30:0;34"
 
 # Source other config files
 # -----------------------------------------------------------------------------

@@ -17,14 +17,14 @@ set -x FZF_DEFAULT_OPTS '
     --no-separator
 '
 
-# bat command for use in  previews
-set -l bat_cmd 'bat --style=snip --theme=ansi --color=always'
+# cat command for use in  previews
+set -l cat_cmd '/bin/cat'
 
 # Set preview command
-set -x FZF_PREVIEW_COMMAND "$bat_cmd"
+set -x FZF_PREVIEW_COMMAND "$cat_cmd"
 
 # Show tree of selection in directory matching
 set -x FZF_ALT_C_OPTS "--preview 'tree {}'"
 
 # Ctrl-T options
-set -x FZF_CTRL_T_OPTS "--preview '$bat_cmd {}'"
+set -x FZF_CTRL_T_OPTS "--preview '$cat_cmd {}'"

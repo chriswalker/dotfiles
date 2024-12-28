@@ -4,6 +4,7 @@
 #
 
 # ANSI 16 colours
+# black/red/green/yellow/blue/magenta/cyan/white
 palette = 0=black
 palette = 1=#C0363D
 palette = 2=#57864E
@@ -16,7 +17,7 @@ palette = 7=#EEEEA7
 palette = 8=black
 palette = 9=#F2ACAA
 palette = 10=#98CE8F
-palette = 110=#EAEBDB
+palette = 11=#EAEBDB
 palette = 12=#A6DCF8
 palette = 13=#D0D0F7
 palette = 14=#CCFFFE

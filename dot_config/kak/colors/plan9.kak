@@ -103,7 +103,7 @@ evaluate-commands %sh{
 
     # Custom
     echo "
-    	face global Ruler ${black},${white2}
-    	face global Todo ${black},${blue1}
+        face global Ruler ${black},${white3}
+        face global Todo ${black},${blue1}
 	"
 }

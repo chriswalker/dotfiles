@@ -1,0 +1,63 @@
+#
+# Fonts.
+#
+font-family = Berkeley Mono
+font-size = 15
+
+#
+# Misc
+#
+
+# Theme.
+theme = plan9
+
+# Tweak cursors.
+cursor-style = block
+cursor-style-blink = true
+
+# Shell integration sets cursor to a bar; override this.
+shell-integration-features = no-cursor
+
+# Native tab bars on MacOS.
+macos-titlebar-style = native
+
+# Copy on select, to skip having to Cmd-C selections.
+copy-on-select = true
+
+#
+# Keybindings.
+#
+
+# New splits.
+keybind = alt+\=new_split:right
+keybind = alt+-=new_split:down
+
+# Zoom.
+keybind = alt+m=toggle_split_zoom
+
+# Move between splits.
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+
+# Resize splits.
+keybind = shift+alt+h=resize_split:left,20
+keybind = shift+alt+j=resize_split:down,20
+keybind = shift+alt+k=resize_split:up,20
+keybind = shift+alt+l=resize_split:right,20
+
+# Override tab switch bindings, as I prefer to use Alt/Option. Note 'Option'
+# has some issues on MacOS, as described here:
+#
+#     https://ghostty.org/docs/config/reference#macos-option-as-alt
+#
+# - if so, will need to set `macos-option-as-alt`.
+keybind = alt+1=goto_tab:1
+keybind = alt+2=goto_tab:2
+keybind = alt+3=goto_tab:3
+keybind = alt+4=goto_tab:4
+keybind = alt+5=goto_tab:5
+keybind = alt+6=goto_tab:6
+keybind = alt+7=goto_tab:7
+keybind = alt+8=goto_tab:8

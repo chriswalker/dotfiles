@@ -1,0 +1,32 @@
+#
+# Plan 9-esque theme, with colours taken from the Vacme
+# Vim theme (https://github.com/overvale/vacme)
+#
+
+# ANSI 16 colours
+palette = 0=black
+palette = 1=#C0363D
+palette = 2=#57864E
+palette = 3=#B7B19C
+palette = 4=#2A8DC5
+palette = 5=#8888C7
+palette = 6=#B0ECED
+palette = 7=#EEEEA7
+
+palette = 8=black
+palette = 9=#F2ACAA
+palette = 10=#98CE8F
+palette = 110=#EAEBDB
+palette = 12=#A6DCF8
+palette = 13=#D0D0F7
+palette = 14=#CCFFFE
+palette = 15=#FFFFEC
+
+# Misc
+background = FFFFEC
+foreground = black
+cursor-color = B0ECED
+selection-background = EEEEA7
+selection-foreground = black
+
+unfocused-split-fill = EEEEA7

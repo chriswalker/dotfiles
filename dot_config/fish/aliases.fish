@@ -6,6 +6,7 @@
 
 # General
 alias grep "grep --color=auto"
+alias dust "dust -c"
 
 # Top display in CPU decending order
 alias top "top -o cpu"

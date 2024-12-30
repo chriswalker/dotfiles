@@ -47,8 +47,8 @@ keybind = shift+alt+j=resize_split:down,20
 keybind = shift+alt+k=resize_split:up,20
 keybind = shift+alt+l=resize_split:right,20
 
-# Override tab switch bindings, as I prefer to use Alt/Option. Note 'Option'
-# has some issues on MacOS, as described here:
+# Override tab switch bindings, as I prefer to use Alt/Option.
+# Note 'Option' has some issues on MacOS, as described here:
 #
 #     https://ghostty.org/docs/config/reference#macos-option-as-alt
 #
@@ -61,3 +61,7 @@ keybind = alt+5=goto_tab:5
 keybind = alt+6=goto_tab:6
 keybind = alt+7=goto_tab:7
 keybind = alt+8=goto_tab:8
+
+# Experimenting with this; might change binding, but
+# seeing how much I use the quick terminal generally.
+keybind = global:cmd+`=toggle_quick_terminal

@@ -16,7 +16,7 @@ hook global WinSetOption filetype=go %{
     }
     lsp-enable-window
 	lsp-inlay-diagnostics-enable buffer
-    set window lsp_auto_highlight_references true
+    set-option global lsp_auto_highlight_references true
 
     # Some additional LSP functionality to the goto/user mappings.
     map -docstring 'implementations' global goto I '<esc>:lsp-implementation<ret>' 

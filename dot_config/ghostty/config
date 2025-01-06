@@ -18,9 +18,6 @@ cursor-style-blink = true
 # Shell integration sets cursor to a bar; override this.
 shell-integration-features = no-cursor
 
-# Native tab bars on MacOS.
-macos-titlebar-style = native
-
 # Copy on select, to skip having to Cmd-C selections.
 copy-on-select = true
 

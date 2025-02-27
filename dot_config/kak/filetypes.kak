@@ -40,6 +40,8 @@ hook global WinSetOption filetype=go %{
 
     # Override some plugin colours.
     set-face global Uninstrumented black
+    set-face global Covered black,bright-green
+    set-face global NotCovered black,bright-red
 }
 
 # Go module files.

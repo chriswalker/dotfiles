@@ -6,17 +6,23 @@
 	attributesfile = $HOME/.config/git/.gitattributes
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[column]
+    ui = auto
 [color "status"]
 	header = black
 	added = green
 	changed = red
 	untracked = blue
-	branch = blue
+	branch = blue bold
 [color "diff"]
 	hunk = magenta
 	func = blue
 	frag = blue
 	meta = black
+    newMoved = magenta
+    oldMoved = yellow
+[color "decorate"]
+    head = blue bold
 [init]
 	defaultBranch = main
 [alias]
@@ -24,3 +30,10 @@
 	co = checkout
     br = branch
     st = status
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+[tag]
+    sort = -version:refname
+[commit]
+    verbose = true

@@ -1,6 +1,7 @@
 [user]
 	email = thatamazingweb@gmail.com
 	name = Chris Walker
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6x8deudcLSWhK8u513a+uOVaLvk+1Z0IqdE2V/aIK2
 [core]
 	editor = kak
 	attributesfile = $HOME/.config/git/.gitattributes
@@ -37,3 +38,9 @@
     sort = -version:refname
 [commit]
     verbose = true
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+    gpgsign = true

@@ -3,27 +3,32 @@ function fish_prompt \
 
     set -l cmd_status $status
 
-    # No limit to pwd output
+    # No limit to pwd output.
     set -g fish_prompt_pwd_dir_length 0
 
-    # Set up some colour variables
+    # Set up some colour variables.
     set -l normal (set_color normal)
     set -l blue (set_color --bold blue)
     set -l cyan (set_color --bold cyan)
-    set -l yellow (set_color --bold yellow) 
+    set -l yellow (set_color --bold yellow)
     set -l magenta (set_color --bold magenta)
     set -l green (set_color green)
     set -l grey (set_color 81a1c1)
     set -l orange (set_color d08770 --bold)
     set -l red (set_color red)
 
-    # PWD
+	# If logged in vi SSH, emit hostname.
+    if test -n "$SSH_TTY"
+        printf '%s[%s]%s ' $blue (prompt_hostname) $normal
+    end
+
+    # PWD.
     if test $cmd_status -eq 0
-        printf '%s%s%s' $normal (prompt_pwd) (fish_git_prompt) 
+        printf '%s%s%s' $normal (prompt_pwd) (fish_git_prompt)
     else
         printf '%s%s%s' $red (prompt_pwd) (fish_git_prompt)
     end
 
-    # Second line
+    # Second line.
     printf '%s\n> ' $normal
 end

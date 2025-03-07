@@ -11,7 +11,8 @@ alias dust "dust -c"
 # Top display in CPU decending order
 alias top "top -o cpu"
 
+{{if eq .os "darwin" -}}
 alias o "open"
 alias ql "qlmanage -p"
-alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"{{- end}}
 

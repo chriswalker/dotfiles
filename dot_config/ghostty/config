@@ -2,10 +2,10 @@
 # Fonts.
 #
 font-family = Berkeley Mono
-font-size = 15
+font-size = 14
 
 #
-# Misc
+# Misc.
 #
 
 # Theme.
@@ -15,11 +15,25 @@ theme = plan9
 cursor-style = block
 cursor-style-blink = true
 
-# Shell integration sets cursor to a bar; override this.
-shell-integration-features = no-cursor
+# Tweak some shell integration features:
+# 1. Shell integration sets cursor to a bar; override this.
+# 2. Switch off window title matching current tab title.
+shell-integration-features = no-title, no-cursor
 
 # Copy on select, to skip having to Cmd-C selections.
-copy-on-select = true
+copy-on-select = clipboard
+
+# Open new tabs at end of tab list.
+window-new-tab-position = end
+
+# Save tab state.
+window-save-state = always
+
+# Disable font ligatures
+font-feature = -calt
+
+# Tab styles
+macos-titlebar-style = native
 
 #
 # Keybindings.

@@ -31,3 +31,4 @@ selection-background = EEEEA7
 selection-foreground = black
 
 unfocused-split-fill = B7B19C
+split-divider-color = A6DCF8

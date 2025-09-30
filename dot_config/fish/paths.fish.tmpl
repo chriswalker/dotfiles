@@ -10,10 +10,9 @@ set PATH ~/.local/bin $PATH
 set -x GOPATH ~/Dev/Go
 set -x GOBIN $GOPATH/bin
 set PATH $GOBIN $PATH
-# Add wezterm to path for scripting in Kakoune etc
-set -x PATH /Applications/WezTerm.app/Contents/MacOS $PATH
+
 # Project/domain-specific binaries and scripts
-set -x PATH ~/Work/TheGeoLab/Dev/Projects/geo-utils/bin $PATH
+set -x PATH ~/Projects/Geo/geo-utils/bin $PATH
 {{- end}}
 
 {{- if (and (eq .os "darwin") (eq .chezmoi.arch "arm64")) }}

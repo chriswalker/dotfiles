@@ -51,7 +51,7 @@ evaluate-commands %sh{
         face global variable ${black}
         face global module ${black}
         face global function ${black}
-        face global string ${black}
+        face global string ${green3},${green1}
         face global keyword ${black}
         face global operator ${black}
         face global attribute ${black}
@@ -91,9 +91,9 @@ evaluate-commands %sh{
         face global Error ${red3}+b
         face global DiagnosticError ${red3}+b
         face global DiagnosticWarning ${red3}+b
-        face global StatusLine ${black},${blue1}
-        face global StatusLineMode ${black},${blue1}+b
-        face global StatusLineInfo ${black},${blue1}+b
+        face global StatusLine ${black},${blue2}
+        face global StatusLineMode ${black},${blue2}+b
+        face global StatusLineInfo ${black},${blue2}+b
         face global StatusLineValue ${red1}
         face global StatusCursor ${black}+r
         face global Prompt ${black}
@@ -104,6 +104,8 @@ evaluate-commands %sh{
     # Custom
     echo "
         face global Ruler ${black},${white3}
-        face global Todo ${black},${blue1}
+        face global Todo ${blue1},${white3}
+        face global DiagnosticError ${red3},${red1}+b
+        face global DiagnosticWarning ${white4},${white2}+b
 	"
 }

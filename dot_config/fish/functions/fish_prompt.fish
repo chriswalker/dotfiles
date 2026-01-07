@@ -15,7 +15,7 @@ function fish_prompt \
     set -l green (set_color green)
     set -l grey (set_color 81a1c1)
     set -l orange (set_color d08770 --bold)
-    set -l red (set_color red)
+    set -l red (set_color --background F8E7E7 red)
 
 	# If logged in vi SSH, emit hostname.
     if test -n "$SSH_TTY"

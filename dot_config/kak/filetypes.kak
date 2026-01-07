@@ -71,3 +71,28 @@ hook global WinSetOption filetype=json %{
 hook global BufCreate .*\.wat %{
    set buffer filetype lisp 
 }
+
+# Protobufs.
+hook global WinSetOption filetype=protobuf %{
+    # LSP-related config.
+    set-option buffer lsp_servers %{
+        [buf]
+        filetypes = ["protobuf"]
+        root_globs = [".git", ".hg"]
+        command = "buf"
+        args = ["lsp", "serve"]
+        settings_section = "buf"
+    }
+    lsp-enable-window
+	lsp-inlay-diagnostics-enable buffer
+    set-option global lsp_auto_highlight_references true
+
+    set window lintcmd 'buf lint'
+    set window formatcmd 'buf format'
+
+    # Format and lint on save.
+    hook buffer BufWritePre .* %{
+        format
+        lint
+    }
+}

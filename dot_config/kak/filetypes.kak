@@ -9,11 +9,6 @@ hook global WinSetOption filetype=go %{
     set window lintcmd 'golangci-lint run'
 
     # LSP-related config.
-    set-option buffer lsp_servers %{
-        [gopls]
-        root_globs = ["Gopkg.toml", "go.mod", ".git", ".hg"]
-        settings_section = "gopls"
-    }
     lsp-enable-window
 	lsp-inlay-diagnostics-enable buffer
     set-option global lsp_auto_highlight_references true

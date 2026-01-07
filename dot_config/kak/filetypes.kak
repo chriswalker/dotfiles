@@ -35,15 +35,15 @@ hook global WinSetOption filetype=go %{
 
     # Override some plugin colours.
     set-face global Uninstrumented black
-    set-face global Covered black,bright-green
-    set-face global NotCovered black,bright-red
+    set-face global Covered rgb:57864E,rgb:EFFEEC
+    set-face global NotCovered rgb:B85C57,rgb:F8E7E7
 }
 
 # Go module files.
 hook global BufCreate .*go\.(mod|sum) %{
     set-face global Dependency black
-    set-face global Hash green
-    set-face global Version blue
+    set-face global Hash rgb:57864E,rgb:EFFEEC
+    set-face global Version rgb:2A8DC5,rgb:E2F1F8
 }
 
 # Shell scripts.

@@ -24,6 +24,11 @@ hook global WinSetOption filetype=go %{
     # Fuzzy-find document symbols and jump to selection.
     map -docstring "document symbol" global goto s '<esc>:lsp-goto-document-symbol<ret>'
 
+    # Add in previously defaulted mappings in kak-lsp
+    map global goto d <esc>:lsp-definition<ret> -docstring 'LSP definition'
+    map global goto r <esc>:lsp-references<ret> -docstring 'LSP references'
+    map global goto y <esc>:lsp-type-definition<ret> -docstring 'LSP type definition'
+
     # Provide easy-access to LSP user mode.
     map -docstring "LSP - Enter LSP user mode" global user l :enter-user-mode<space>lsp<ret>
     

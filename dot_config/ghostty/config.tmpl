@@ -2,7 +2,12 @@
 # Fonts.
 #
 font-family = Berkeley Mono
+
+{{- if eq .work true}}
+font-size = 15
+{{ else }}
 font-size = 14
+{{- end}}
 
 #
 # Misc.
@@ -33,7 +38,7 @@ window-save-state = always
 font-feature = -calt
 
 # Tab styles
-macos-titlebar-style = native
+macos-titlebar-style = transparent
 
 #
 # Keybindings.

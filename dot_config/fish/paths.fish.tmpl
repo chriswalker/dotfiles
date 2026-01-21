@@ -24,6 +24,3 @@ set -x PATH /opt/homebrew/opt/sqlite/bin $PATH
 eval (/opt/homebrew/bin/brew shellenv)
 {{- end}}
 
-{{- if eq .work true}}
-set -x GOPRIVATE "github.com/eagle-eye-solutions/*"
-{{- end}}

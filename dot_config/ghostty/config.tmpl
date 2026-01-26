@@ -3,10 +3,10 @@
 #
 font-family = Berkeley Mono
 
-{{- if eq .work true}}
-font-size = 15
-{{ else }}
+{{- if eq .chezmoi.hostname "mac-dev" }}
 font-size = 14
+{{ else if eq .chezmoi.hostname "mac-work" }}
+font-size = 15
 {{- end}}
 
 #

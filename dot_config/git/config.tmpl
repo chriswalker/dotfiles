@@ -1,7 +1,11 @@
 [user]
+{{- if eq .chezmoi.hostname "mac-dev" }}
 	email = thatamazingweb@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6x8deudcLSWhK8u513a+uOVaLvk+1Z0IqdE2V/aIK2
+{{ else if eq .chezmoi.hostname "mac-work" }}
+	email = chris.walker@eagleeye.com
+{{- end}}
 	name = Chris Walker
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6x8deudcLSWhK8u513a+uOVaLvk+1Z0IqdE2V/aIK2
 [core]
 	editor = kak
 	attributesfile = $HOME/.config/git/.gitattributes
@@ -11,10 +15,10 @@
     ui = auto
 [color "status"]
 	header = black
-	added = green
-	changed = red
-	untracked = blue
-	branch = blue bold
+	added = green "#EFFEEC"
+	changed = red "#F8E7E7"
+	untracked = blue "#E2F1F8"
+	branch = blue "#E2F1F8" bold
 [color "diff"]
 	hunk = magenta
 	func = blue
@@ -38,9 +42,11 @@
     sort = -version:refname
 [commit]
     verbose = true
+{{- if eq .chezmoi.hostname "mac-dev" }}
 [gpg]
     format = ssh
 [gpg "ssh"]
     program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
     gpgsign = true
+{{- end}}

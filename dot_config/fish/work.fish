@@ -11,8 +11,7 @@
 # $PATH-related additions.
 #
 
-# Add GCloud binaries.
-set -x PATH ~/Dev/Apps/google-cloud-sdk/bin $PATH
+# Nothing to see here, move along...
 
 #
 # Development-specific.

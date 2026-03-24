@@ -1,38 +1,40 @@
 [user]
 {{- if eq .chezmoi.hostname "mac-dev" }}
-	email = thatamazingweb@gmail.com
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6x8deudcLSWhK8u513a+uOVaLvk+1Z0IqdE2V/aIK2
+    email = thatamazingweb@gmail.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6x8deudcLSWhK8u513a+uOVaLvk+1Z0IqdE2V/aIK2
 {{ else if eq .chezmoi.hostname "mac-work" }}
-	email = chris.walker@eagleeye.com
+    email = chris.walker@eagleeye.com
 {{- end}}
-	name = Chris Walker
+    name = Chris Walker
 [core]
-	editor = kak
-	attributesfile = $HOME/.config/git/.gitattributes
+    editor = kak
+    attributesfile = $HOME/.config/git/.gitattributes
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
 [column]
     ui = auto
 [color "status"]
-	header = black
-	added = green "#EFFEEC"
-	changed = red "#F8E7E7"
-	untracked = blue "#E2F1F8"
-	branch = blue "#E2F1F8" bold
+    header = black
+    added = green "#EFFEEC"
+    changed = red "#F8E7E7"
+    untracked = blue "#E2F1F8"
+    branch = blue "#E2F1F8" bold
 [color "diff"]
-	hunk = magenta
-	func = blue
-	frag = blue
-	meta = black
+    hunk = magenta
+    func = blue
+    frag = blue
+    meta = black
     newMoved = magenta
     oldMoved = yellow
+    old = red "#F8E7E7"
+    new = green "#EFFEEC"
 [color "decorate"]
     head = blue bold
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [alias]
-	lg = log --oneline --decorate --graph -n 15
-	co = checkout
+    lg = log --oneline --decorate --graph -n 15
+    co = checkout
     br = branch
     st = status
 [diff]

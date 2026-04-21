@@ -4,7 +4,7 @@
 # @author Chris Walker
 #
 
-# Use ripgrep in searches
+# Use ripgrep in searches.
 set -x FZF_DEFAULT_COMMAND 'rg --hidden -l ""'
 
 # Set theming.
@@ -17,22 +17,18 @@ set -x FZF_DEFAULT_OPTS '
     --color=hl:#2A8DC5:bold:underline
     --color=hl+:#2A8DC5:bold:reverse
     --color=pointer:black:bold
-    --color=info:#98CE8F:bold:reverse
-    --color=preview-bg:#FFFFC7
+    --color=info:#2A8DC5:bold:reverse
+    --color=preview-fg:#2A8DC5
+    --color=border:#B7B19C
+    
     --pointer=">"
     --no-scrollbar
     --no-separator
     --layout=reverse
     --info=inline
-    --border
+    --border=top
+    --preview-window border-line
     '
-    # --color=16,prompt:black,info:green,fg+:black:bold,bg+:bright-white
-    # --color=hl+:red,hl:black:reverse,hl+:black:reverse
-    # --color=pointer:black:bold,info:blue:reverse
-    # --pointer=">"
-    # --no-scrollbar
-    # --no-separator
-# '
 
 # cat command for use in  previews.
 set -l cat_cmd '/bin/cat'
@@ -40,9 +36,12 @@ set -l cat_cmd '/bin/cat'
 # Set preview command.
 set -x FZF_PREVIEW_COMMAND "$cat_cmd"
 
-# Show tree of selection in directory matching.
-set -x FZF_ALT_C_OPTS "--preview 'tree {}'"
+# Ctrl-T/History searching.
+set -x FZF_CTRL_R_OPTS "--border-label=\" History \" --border-label-pos=2"
 
-# Ctrl-T options.
-set -x FZF_CTRL_T_OPTS "--preview '$cat_cmd {}'"
+# Alt-C/Directories options - show tree of selected directory.
+set -x FZF_ALT_C_OPTS "--border-label=\" Directories \" --border-label-pos=2 --preview 'tree {}'"
+
+# Ctrl-T/File matching  options.
+set -x FZF_CTRL_T_OPTS "--border-label=\" Files \" --border-label-pos=2 --preview '$cat_cmd {}'"
 

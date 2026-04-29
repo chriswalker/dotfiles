@@ -101,3 +101,16 @@ hook global WinSetOption filetype=protobuf %{
         lint
     }
 }
+
+# Remove kakoune-lsp's default lsp-goto hooks, and re-apply them
+# with custom colouring.
+#
+# This is quite hacky, but there is no official way to modify colours,
+# and the default ones do not work very well on light schemes.
+remove-hooks global lsp-goto-highlight
+hook -group lsp-goto-highlight global WinSetOption filetype=(lsp-(?:diagnostics|document-symbol|goto)) %{
+    add-highlighter "window/%val{hook_param_capture_1}" group
+    add-highlighter "window/%val{hook_param_capture_1}/" regex ^\h*\K([^:\n]+):(\d+)\b(?::(\d+)\b)?(?::([^\n]+)) 1:rgb:2A8DC5,rgb:E2F1F8 2:black 3:black
+    add-highlighter "window/%val{hook_param_capture_1}/" line %{%opt{jump_current_line}} default+b
+    hook -once -always window WinSetOption filetype=.* "remove-highlighter window/%val{hook_param_capture_1}"
+}

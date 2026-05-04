@@ -14,12 +14,11 @@ set -x FZF_DEFAULT_OPTS '
     --color=prompt:black
     --color=fg+:black
     --color=bg+:white
-    --color=hl:#2A8DC5:bold:underline
-    --color=hl+:#2A8DC5:bold:reverse
+    --color=hl:blue:bold:underline
+    --color=hl+:blue:bold:reverse
     --color=pointer:black:bold
-    --color=info:#2A8DC5:bold:reverse
-    --color=preview-fg:#2A8DC5
-    --color=border:#B7B19C
+    --color=info:blue:bold:reverse
+    --color=preview-fg:blue
     
     --pointer=">"
     --no-scrollbar

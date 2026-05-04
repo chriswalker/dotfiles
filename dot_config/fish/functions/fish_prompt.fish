@@ -8,25 +8,19 @@ function fish_prompt \
 
     # Set up some colour variables.
     set -l normal (set_color normal)
-    set -l blue (set_color --bold blue)
-    set -l cyan (set_color --bold cyan)
-    set -l yellow (set_color --bold yellow)
-    set -l magenta (set_color --bold magenta)
-    set -l green (set_color green)
-    set -l grey (set_color 81a1c1)
-    set -l orange (set_color d08770 --bold)
-    set -l red (set_color --background F8E7E7 red)
+    set -l ssh_hostname (set_color --bold blue)
+    set -l error (set_color --background brred red)
 
 	# If logged in vi SSH, emit hostname.
     if test -n "$SSH_TTY"
-        printf '%s[%s]%s ' $blue (prompt_hostname) $normal
+        printf '%s[%s]%s ' $ssh_hostname (prompt_hostname) $normal
     end
 
     # PWD.
     if test $cmd_status -eq 0
         printf '%s%s%s' $normal (prompt_pwd) (fish_git_prompt)
     else
-        printf '%s%s%s' $red (prompt_pwd) (fish_git_prompt)
+        printf '%s%s%s' $error (prompt_pwd) (fish_git_prompt)
     end
 
     # Second line.

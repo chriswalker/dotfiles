@@ -1,111 +1,63 @@
 #
-# acme.kak, by chriswalker
+# plan9.kak, by chriswalker
 #
 # Based on `vacme` (https://github.com/overvale/vacme), a Vim
 # theme implementing Acme editor colours, with some tweaks (vacme
 # also uses 256-colours, in addition to truecolour).
 #
 
-# TODO - 
-evaluate-commands %sh{
-    white1='rgb:FFFFEC'
-    white2='rgb:FFFFC7'
-    white3='rgb:EEEEA7'
-    white4='rgb:999957'
-    # white2='rgb:EEEEA7'
-    # white3='rgb:999957'
-    # white4='rgb:424242'
+# Code
+face global value black
+face global type black
+face global variable black
+face global block black
+face global link black
+face global bullet black
+face global list black
+face global module black
+face global function black
+face global string green,bright-green
+face global keyword black
+face global operator black
+face global attribute black
+face global comment blue
+face global meta black
+face global builtin black
 
-    red1='rgb:F8E7E7'
-    red2='rgb:F2ACAA'
-    red3='rgb:B85C57'
+# Markup - TODO
+face global title black
+face global header black
+face global bold black
+face global italic black
+face global mono black
 
-    green1='rgb:EFFEEC'
-    green2='rgb:98CE8F'
-    green3='rgb:57864E'
+# Builtins
+face global Default black,bright-white
+face global PrimarySelection black,white
+face global SecondarySelection black,bright-cyan
+face global PrimaryCursor black,cyan
+face global SecondaryCursor black,white
+face global PrimaryCursorEol bright-white,red
+face global SecondaryCursorEol magenta
+face global LineNumbers black,bright-white
+face global LineNumberCursor black,white
+face global MenuForeground bright-blue,blue+b
+face global MenuBackground black,bright-blue
+face global MenuInfo black,bright-white
+face global Information black,bright-blue
+face global Error red,bright-red+b
+face global DiagnosticError red,bright-red+b
+face global DiagnosticWarning bright-white,white+b
+face global StatusLine bright-blue,blue+b
+face global StatusLineMode blue,bright-blue
+face global StatusLineInfo blue,bright-blue
+face global StatusLineValue bright-red
+face global StatusCursor black,cyan
+face global Prompt bright-blue,blue+b
+face global MatchingChar black,white
+face global BufferPadding black
 
-    yellow1='rgb:EAEBDB'
-    yellow2='rgb:B7B19C'
-    yellow3='rgb:8F7634'
+# Custom
+face global Ruler black,white
+face global Todo blue,white+b
 
-    blue1='rgb:E2F1F8'
-    blue2='rgb:A6DCF8'
-    blue3='rgb:2A8DC5'
-
-    magenta2='rgb:D0D0F7'
-    magenta3='rgb:8888C7'
-
-    cyan1='rgb:CCFFFE'
-    cyan2='rgb:B0ECED'
-    cyan3='rgb:6AA7A8'
-
-    accent1='rgb:030093'
-
-    black='rgb:000000'
-    white='rgb:ffffff'
-
-    # Code
-    echo "
-        face global value ${black}
-        face global type ${black}
-        face global variable ${black}
-        face global module ${black}
-        face global function ${black}
-        face global string ${green3},${green1}
-        face global keyword ${black}
-        face global operator ${black}
-        face global attribute ${black}
-        face global comment ${blue3}
-        face global meta ${black}
-        face global builtin ${black}
-    "
-
-    # Markup - TODO
-    echo "
-       face global title ${black}
-       face global header ${black}
-       face global bold ${black}
-       face global italic ${black}
-       face global mono ${black}
-       face global block ${black}
-       face global link ${black}
-       face global bullet ${black}
-       face global list ${black}
-    "
-
-    # Builtins
-    echo "
-        face global Default ${black},${white1}
-        face global PrimarySelection ${black},${white3}
-        face global SecondarySelection ${black},${cyan2}
-        face global PrimaryCursor ${black},${cyan2}
-        face global SecondaryCursor ${black},${white3}
-        face global PrimaryCursorEol ${white1},${red2}
-        face global SecondaryCursorEol ${magenta3}
-        face global LineNumbers ${black},${white1}
-        face global LineNumberCursor ${black},${white3}
-        face global MenuForeground ${black},${blue2}+b
-        face global MenuBackground ${black},${blue1}
-        face global MenuInfo ${black},${blue1}
-        face global Information ${black},${blue1}
-        face global Error ${red3}+b
-        face global DiagnosticError ${red3}+b
-        face global DiagnosticWarning ${red3}+b
-        face global StatusLine ${black},${blue2}
-        face global StatusLineMode ${black},${blue2}+b
-        face global StatusLineInfo ${black},${blue2}+b
-        face global StatusLineValue ${red1}
-        face global StatusCursor ${black}+r
-        face global Prompt ${black}
-        face global MatchingChar ${black},${white3}
-        face global BufferPadding ${black}
-    "
-
-    # Custom
-    echo "
-        face global Ruler ${black},${white3}
-        face global Todo ${blue1},${white3}
-        face global DiagnosticError ${red3},${red1}+b
-        face global DiagnosticWarning ${white4},${white2}+b
-	"
-}

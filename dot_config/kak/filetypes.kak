@@ -40,15 +40,15 @@ hook global WinSetOption filetype=go %{
 
     # Override some plugin colours.
     set-face global Uninstrumented black
-    set-face global Covered rgb:57864E,rgb:EFFEEC
-    set-face global NotCovered rgb:B85C57,rgb:F8E7E7
+    set-face global Covered green,bright-green
+    set-face global NotCovered red,bright-red
 }
 
 # Go module files.
 hook global BufCreate .*go\.(mod|sum) %{
     set-face global Dependency black
-    set-face global Hash rgb:57864E,rgb:EFFEEC
-    set-face global Version rgb:2A8DC5,rgb:E2F1F8
+    set-face global Hash green,bright-green
+    set-face global Version blue,bright-blue
 }
 
 # Shell scripts.
@@ -110,7 +110,7 @@ hook global WinSetOption filetype=protobuf %{
 remove-hooks global lsp-goto-highlight
 hook -group lsp-goto-highlight global WinSetOption filetype=(lsp-(?:diagnostics|document-symbol|goto)) %{
     add-highlighter "window/%val{hook_param_capture_1}" group
-    add-highlighter "window/%val{hook_param_capture_1}/" regex ^\h*\K([^:\n]+):(\d+)\b(?::(\d+)\b)?(?::([^\n]+)) 1:rgb:2A8DC5,rgb:E2F1F8 2:black 3:black
+    add-highlighter "window/%val{hook_param_capture_1}/" regex ^\h*\K([^:\n]+):(\d+)\b(?::(\d+)\b)?(?::([^\n]+)) 1:blue,bright-blue 2:black 3:black
     add-highlighter "window/%val{hook_param_capture_1}/" line %{%opt{jump_current_line}} default+b
     hook -once -always window WinSetOption filetype=.* "remove-highlighter window/%val{hook_param_capture_1}"
 }

@@ -47,7 +47,7 @@ face global MenuInfo black,bright-white
 face global Information black,bright-blue
 face global Error red,bright-red+b
 face global DiagnosticError red,bright-red+b
-face global DiagnosticWarning bright-white,white+b
+face global DiagnosticWarning yellow,white+b
 face global StatusLine bright-blue,blue+b
 face global StatusLineMode blue,bright-blue
 face global StatusLineInfo blue,bright-blue

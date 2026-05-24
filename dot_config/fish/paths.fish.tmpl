@@ -15,6 +15,7 @@ set PATH $GOBIN $PATH
 {{- if eq .work false }}
 # Project/domain-specific binaries and scripts
 set -x PATH ~/Projects/Geo/geo-utils/bin $PATH
+set -x GOKRAZY_PARENT_DIR ~/Dev/Data/gokrazy/
 {{- end}}
 
 {{- if (and (eq .os "darwin") (eq .chezmoi.arch "arm64")) }}

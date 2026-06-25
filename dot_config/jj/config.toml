@@ -1,0 +1,43 @@
+#:schema https://jj-vcs.github.io/jj/latest/config-schema.json
+
+[user]
+name = "Chris Walker"
+email = "chris.walker@tuta.io"
+
+[ui]
+editor = "kak"
+
+[colors]
+"timestamp" = "black"
+"empty" = "red"
+"description" = "blue"
+"node immutable" = "blue"
+
+# "bookmark" = { fg = "#57864E", bg = "#EFFEEC" }
+# "bookmarks" = { fg = "#57864E", bg = "#EFFEEC" }
+# "local_bookmark" = { fg = "#57864E", bg = "#EFFEEC" }
+# "remote_bookmarks" = { fg = "#57864E", bg = "#EFFEEC" }
+
+"diff removed" = { fg = "#B85C57", bg = "#F8E7E7" }
+"diff added" = { fg = "#57864E", bg = "#EFFEEC" }
+"diff modified" = { fg = "#2A8DC5", bg = "#E2F1F8" }
+
+# "change_id prefix" = { fg = "#57864E", bg = "#EFFEEC", underline = true }
+# "change_id rest" = { fg = "#57864E", bg = "#EFFEEC" }
+"change_id prefix" = { fg = "#57864E", underline = true }
+"change_id rest" = { fg = "#57864E" }
+ 
+"commit_id prefix" = { fg = "#2A8DC5", underline = true }
+"commit_id rest" = { fg = "#2A8DC5" }
+
+"working_copy timestamp" = "black"
+"working_copy empty" = { fg = "#999957", bg = "#FFFFC7" }
+"working_copy empty description placeholder" = { fg = "#999957", bg = "#FFFFC7" }
+"working_copy author" = "black"
+"working_copy committer" = "black"
+
+"conflict" = { fg = "#B85C57", bg = "#F8E7E7" }
+
+"author" = "black"
+"committer" = "black"
+

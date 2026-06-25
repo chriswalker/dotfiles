@@ -1,0 +1,18 @@
+[theme]
+name = "plan-9"
+
+# ANSI 16 colours
+# (0) black/ (1) red/ (2) green/ (3) yellow/ (4) blue/ (5) magenta/ (6) cyan/ (7) white
+[colors]
+# AlertInfo = "#a6d189"
+AlertInfo = "@ansi_(2)"
+# Used in string matches.
+AlertWarn = "@ansi_(1)"
+# Used in line highlights.
+AlertError = "@ansi_(1)"
+# Used in hostname, and keys.
+Annotation = "@ansi_(4)"
+# Used in timestamps.
+Guidance = "@ansi_(0)"
+Important = "@ansi_(1)"
+Title = "@ansi_(4)"

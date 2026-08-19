@@ -1,0 +1,39 @@
+#
+# A modified variant of Flexoki (https://stephango.com/flexoki). Instead of
+# using the core colours, the ANSI 8-15 values are (more or less) the 50-valued
+# colours from Flexoki's extended palette.
+#
+
+# ANSI 16 colours
+# black/red/green/yellow/blue/magenta/cyan/white
+# The 'dark' ANSI colours are based on the 600-valued Flexoki colours.
+palette = 0=#100F0F
+palette = 1=#AF3029
+palette = 2=#66800B
+palette = 3=#AD8301
+palette = 4=#205EA6
+palette = 5=#A02F6F
+palette = 6=#24837B
+palette = 7=#F2F0E5
+
+# The 'light' ANSI colours are based on the 300-valued Flexoki colours (apart from
+# light Black).
+palette = 8=#B7B5AC
+palette = 9=#FFE1D5
+palette = 10=#EDEECF
+palette = 11=#FAEEC6
+palette = 12=#E1ECEB
+palette = 13=#FEE4E5
+palette = 14=#DDF1E4
+palette = 15=#FFFCF0
+
+# Misc
+background = FFFCF0
+foreground = 100F0F
+
+cursor-color = DDF1E4
+selection-background = FAEEC6
+selection-foreground = 100F0F
+
+unfocused-split-fill = B7B5AC
+split-divider-color = B7B5AC

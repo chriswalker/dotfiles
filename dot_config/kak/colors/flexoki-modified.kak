@@ -31,8 +31,8 @@ face global mono black
 face global Default black,bright-white
 face global PrimarySelection black,bright-yellow
 face global SecondarySelection black,bright-cyan
-face global PrimaryCursor black,bright-red+b
-face global SecondaryCursor black,bright-cyan+b
+face global PrimaryCursor bright-white,yellow+b
+face global SecondaryCursor bright-white,cyan+b
 face global PrimaryCursorEol bright-white,red
 face global SecondaryCursorEol magenta
 face global LineNumbers black,bright-white

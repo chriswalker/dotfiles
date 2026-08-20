@@ -50,7 +50,7 @@ face global StatusLineInfo blue,bright-blue
 face global StatusLineValue bright-red
 face global StatusCursor black,bright-magenta
 face global Prompt bright-blue,blue+b
-face global MatchingChar black,white
+face global MatchingChar black,bright-yellow
 face global BufferPadding black
 
 # Custom

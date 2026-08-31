@@ -18,9 +18,9 @@ function fish_prompt \
 
     # PWD.
     if test $cmd_status -eq 0
-        printf '%s%s%s' $normal (prompt_pwd) (fish_git_prompt)
+        printf '%s%s%s' $normal (prompt_pwd) (vcs_prompt)
     else
-        printf '%s%s%s' $error (prompt_pwd) (fish_git_prompt)
+        printf '%s%s%s' $error (prompt_pwd) (vcs_prompt)
     end
 
     # Second line.

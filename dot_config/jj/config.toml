@@ -45,10 +45,12 @@ editor = "kak"
 "working_copy timestamp" = "black"
 "working_copy empty" = { fg = "yellow", bg = "bright red" }
 
-"working_copy description placeholder" = { fg = "red" }
+"working_copy description placeholder" = { fg = "yellow", bg = "bright yellow" }
 
 "working_copy author" = "black"
 "working_copy committer" = "black"
 
+"working_copy conflict" = { fg = "red", bg = "bright red", bold = true }
+
 # Conflict.
-"conflict" = { fg = "magenta", bg = "bright magenta" }
+"conflict" = { fg = "red", bg = "bright red", bold = true }

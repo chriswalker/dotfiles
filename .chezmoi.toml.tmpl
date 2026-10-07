@@ -1,3 +1,4 @@
+{{- $home := (and (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "mac-dev")) -}}
 {{- $work := (and (eq .chezmoi.os "darwin") (eq .chezmoi.hostname "mac-work")) -}}
 
 {{- $os := .chezmoi.os -}}
@@ -6,6 +7,7 @@
 {{- end -}}
 
 [data]
+home = {{ $home }}
 work = {{ $work }}
 os = {{ $os | quote }}
 

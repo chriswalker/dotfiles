@@ -5,14 +5,18 @@
 #
 
 # General
-alias grep "grep --color=auto"
-alias dust "dust -c"
+abbr --add dust "dust -c"
 
 # Top display in CPU decending order
-alias top "top -o cpu"
+abbr --add top "top -o cpu"
 
 {{if eq .os "darwin" -}}
-alias o "open"
-alias ql "qlmanage -p"
-alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"{{- end}}
+abbr --add o "open"
+abbr --add ql "qlmanage -p"
+{{end -}}
 
+{{if eq .home true }}
+# Need to alias Tailscale first, so we can abbreviate the alias.
+alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+abbr --add ts tailscale
+{{end -}}

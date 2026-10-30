@@ -13,9 +13,9 @@ set -x FZF_DEFAULT_OPTS '
     --color=gutter:bright-white
     --color=prompt:black
     --color=fg+:black
-    --color=bg+:bright-yellow
-    --color=hl:yellow:bold:reverse
-    --color=hl+:yellow:bold:reverse
+    --color=bg+:bright-cyan
+    --color=hl:bright-yellow:bold:reverse
+    --color=hl+:bright-yellow:bold:reverse
     --color=pointer:black:bold
     --color=info:blue:bold:reverse
     --color=preview-fg:blue

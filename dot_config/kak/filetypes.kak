@@ -72,34 +72,35 @@ hook global WinSetOption filetype=json %{
     # to do this.
 }
 
-# WebAssembly Text files (just highlight as Lisp).
-hook global BufCreate .*\.wat %{
-   set buffer filetype lisp 
-}
-
-# Protobufs.
-hook global WinSetOption filetype=protobuf %{
+# Lua.
+hook global WinSetOption filetype=lua %{
     # LSP-related config.
     set-option buffer lsp_servers %{
-        [buf]
-        filetypes = ["protobuf"]
-        root_globs = [".git", ".hg"]
-        command = "buf"
-        args = ["lsp", "serve"]
-        settings_section = "buf"
+        [lua]
+        filetypes = ["lua"]
+        root_globs = [".git"]
+        command = "lua-language-server"
+        settings_section = "lua"
     }
     lsp-enable-window
 	lsp-inlay-diagnostics-enable buffer
     set-option global lsp_auto_highlight_references true
 
-    set window lintcmd 'buf lint'
-    set window formatcmd 'buf format'
+    # TODO - formatcmd (maybe lint)
 
-    # Format and lint on save.
-    hook buffer BufWritePre .* %{
-        format
-        lint
-    }
+    # Fuzzy-find document symbols and jump to selection.
+    map -docstring "document symbol" global goto s '<esc>:lsp-goto-document-symbol<ret>'
+
+    # Add in previously defaulted mappings in kak-lsp
+    map global goto d <esc>:lsp-definition<ret> -docstring 'LSP definition'
+    map global goto r <esc>:lsp-references<ret> -docstring 'LSP references'
+    map global goto y <esc>:lsp-type-definition<ret> -docstring 'LSP type definition'
+
+    # Provide easy-access to LSP user mode.
+    map -docstring "LSP - Enter LSP user mode" global user l :enter-user-mode<space>lsp<ret>
+
+    # Format on save (via lua-language-server).
+    hook buffer BufWritePre .* lsp-formatting-sync
 }
 
 # Remove kakoune-lsp's default lsp-goto hooks, and re-apply them

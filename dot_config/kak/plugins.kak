@@ -15,8 +15,31 @@ plug "https://tangled.org/chrismwalker.net/golang.kak" ensure %{
     map -docstring "Go - Add JSON tags to struct" global user j :go-add-tags<space>json<ret>
 }
 
-# rex.kak - makes Kakoune Rex-aware.
+# rex.kak - makes Kakoune Rex-aware, if Kakoune is running within Rex.
 # -----------------------------------------------------------------------------
-plug "https://tangled.org/chrismwalker.net/rex.kak" ensure %{
-    # Key bindings
+try %{
+    evaluate-commands %sh{ [ -n "$REX_SESSION" ] || echo fail }
+    
+    plug "https://tangled.org/chrismwalker.net/rex.kak" ensure %{
+        hook global ModuleLoaded rex %{
+            try %{
+                declare-user-mode rex
+            }
+            map -docstring "Rex - Enter Rex user mode" global user r ":enter-user-mode rex<ret>"
+
+            # REPL.
+            map -docstring "Send selection to REPL" global rex s ':repl-send-text<ret>'
+            map -docstring "Open a new REPL pane" global rex n ':repl-new<space>'
+            map -docstring "Use existing pane as REPL target" global rex p ':rex-repl-set-pane<space>'
+
+            # Named run panes.
+            map -docstring "Run in a named pane" global rex r ':rex-run<space>'
+            map -docstring "Re-run last" global rex . ':rex-rerun<ret>'
+            map -docstring "Stop a named pane" global rex k ':rex-stop<ret>'
+
+            # Split-and-run.
+            map -docstring "Split right and run" global rex '\' ':rex-terminal-horizontal<space>'
+            map -docstring "Split down and run" global rex <minus> ':rex-terminal-vertical<space>'
+        } 
+    }
 }

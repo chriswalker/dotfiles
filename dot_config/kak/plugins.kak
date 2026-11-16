@@ -40,6 +40,8 @@ try %{
             # Split-and-run.
             map -docstring "Split right and run" global rex '\' ':rex-terminal-horizontal<space>'
             map -docstring "Split down and run" global rex <minus> ':rex-terminal-vertical<space>'
+            # Open a new pane with the same Kakoune session
+            map -docstring "New client - split right" global normal <c-l> ':evaluate-commands %{ set-option local windowing_placement horizontal; new }<ret>'
         } 
     }
 }

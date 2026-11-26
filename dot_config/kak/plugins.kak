@@ -18,7 +18,7 @@ plug "https://tangled.org/chrismwalker.net/golang.kak" ensure %{
 # rex.kak - makes Kakoune Rex-aware, if Kakoune is running within Rex.
 # -----------------------------------------------------------------------------
 try %{
-    evaluate-commands %sh{ [ -n "$REX_SESSION" ] || echo fail }
+    evaluate-commands %sh{ [ -n "$REX_BLOCK" ] || echo fail }
     
     plug "https://tangled.org/chrismwalker.net/rex.kak" ensure %{
         hook global ModuleLoaded rex %{

@@ -2,7 +2,7 @@
 -- Pick a project under ~/Projects/Go and open it in a new tab.
 --
 
-local projects_root = os.getenv("HOME") .. "/Projects/Go"
+local projects_root = os.getenv("HOME") .. {{if eq .chezmoi.hostname "mac-dev"}}"/Projects/Go"{{else if eq .chezmoi.hostname "mac-work"}}"/Dev/Work"{{end}}
 
 -- Returns the current branch of a git checkout, or nil if dir isn't one.
 -- TODO: Make this Jujutsu-aware.
